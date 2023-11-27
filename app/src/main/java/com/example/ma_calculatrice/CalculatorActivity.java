@@ -88,6 +88,15 @@ public class CalculatorActivity extends AppCompatActivity {
         int buttonWidth = (int) (screenWidth * buttonWidthPercentage);
         int buttonHeight = (int) (screenHeight * buttonHeightPercentage);
         int caseWidth = (int) (screenWidth * 1/3);
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) tableLayout.getLayoutParams();
+        params.bottomMargin = marginBottom;
+        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        params.width = screenWidth;
+        tableLayout.setLayoutParams(params);
+        /*TableLayout.LayoutParams tableLayoutParams = new TableLayout.LayoutParams(screenWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tableLayout.setLayoutParams(tableLayoutParams);*/
+
+        System.out.println("Largueur du tableau :" + tableLayout.getWidth());
 
         for (int i = 0; i < tableLayout.getChildCount(); i++) {
             View child = tableLayout.getChildAt(i);
