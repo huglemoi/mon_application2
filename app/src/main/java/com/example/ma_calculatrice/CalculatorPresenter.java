@@ -5,7 +5,7 @@ package com.example.ma_calculatrice;public class CalculatorPresenter {
         _view = calculatorView;
     }
 
-    public void addNumber(int i) {
-        _view.result.setText(_view.result.getText() + String.valueOf(i));
+    public void addCharacter(String s) {
+        _view.result.setText(_view.result.getText() + s);
     }
 }

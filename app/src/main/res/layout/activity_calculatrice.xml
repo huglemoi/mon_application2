@@ -17,113 +17,132 @@
                 android:id="@+id/textView"
                 android:layout_width="0dp"
                 android:layout_marginEnd="19dp"
-                android:textAlignment="textEnd"
-                android:layout_span="3"/>
+                android:layout_span="3"
+                android:textAlignment="textEnd" />
 
         </TableRow>
+
         <TableRow>
 
             <TextView
                 android:layout_width="0dp"
-                android:textAlignment="textEnd"
-                android:layout_weight="3" />
+                android:layout_weight="3"
+                android:textAlignment="textEnd" />
 
             <TextView
                 android:layout_width="0dp"
-                android:textAlignment="textEnd"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:textAlignment="textEnd" />
 
             <Button
                 android:id="@+id/divisionButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="/" />
 
         </TableRow>
+
         <TableRow>
 
             <Button
                 android:id="@+id/soustractionButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="-" />
 
             <Button
                 android:id="@+id/multiplicationButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="*" />
 
             <Button
                 android:id="@+id/additionButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="+" />
 
         </TableRow>
+
         <TableRow>
 
             <Button
                 android:id="@+id/button7"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_7" />
 
             <Button
                 android:id="@+id/button8"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_8" />
 
             <Button
                 android:id="@+id/button9"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_9" />
 
         </TableRow>
+
         <TableRow>
 
             <Button
                 android:id="@+id/button4"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_4" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_5" />
 
             <Button
                 android:id="@+id/button6"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_6" />
 
         </TableRow>
+
         <TableRow>
 
             <Button
                 android:id="@+id/button1"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_1" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_2" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_3" />
 
         </TableRow>
+
         <TableRow>
 
 
@@ -137,6 +156,7 @@
                 android:id="@+id/button0"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
+                android:onClick="addCharacter"
                 android:text="@string/_0" />
 
             <Button
@@ -148,4 +168,4 @@
 
 
     </TableLayout>
-</RelativeLayout>
+</LinearLayout>

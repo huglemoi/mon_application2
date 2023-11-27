@@ -59,7 +59,7 @@ public class CalculatorActivity extends AppCompatActivity {
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
 
-        button0.setOnClickListener(even -> {presenter.addNumber(0);});
+        /*button0.setOnClickListener(even -> {presenter.addNumber(0);});
         button1.setOnClickListener(even -> {presenter.addNumber(1);});
         button2.setOnClickListener(even -> {presenter.addNumber(2);});
         button3.setOnClickListener(even -> {presenter.addNumber(3);});
@@ -68,7 +68,7 @@ public class CalculatorActivity extends AppCompatActivity {
         button6.setOnClickListener(even -> {presenter.addNumber(6);});
         button7.setOnClickListener(even -> {presenter.addNumber(7);});
         button8.setOnClickListener(even -> {presenter.addNumber(8);});
-        button9.setOnClickListener(even -> {presenter.addNumber(9);});
+        button9.setOnClickListener(even -> {presenter.addNumber(9);});*/
 
 
         TableLayout tableLayout = findViewById(R.id.tableLayout);
@@ -79,7 +79,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
         int marginBottom = (int) (screenHeight * 0.05);
 
-
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) tableLayout.getLayoutParams();
+        params.bottomMargin = marginBottom;
+        tableLayout.setLayoutParams(params);
 
         double buttonWidthPercentage = 0.25;
         double buttonHeightPercentage = 0.07;
@@ -116,5 +118,10 @@ public class CalculatorActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void addCharacter(View view) {
+        String s = (String) ((Button)view).getText();
+        presenter.addCharacter(s);
     }
 }
