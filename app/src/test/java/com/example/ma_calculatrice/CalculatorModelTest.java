@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 public class CalculatorModelTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        assertThrows(ArithmeticException.class, () -> {
+            CalculatorModel.exec("2+"); // Appel de la fonction avec un diviseur égal à zéro
+        });
     }
 }

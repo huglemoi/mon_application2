@@ -83,20 +83,11 @@ public class CalculatorActivity extends AppCompatActivity {
         params.bottomMargin = marginBottom;
         tableLayout.setLayoutParams(params);
 
-        double buttonWidthPercentage = 0.25;
+        double buttonWidthPercentage = 0.333;
         double buttonHeightPercentage = 0.07;
         int buttonWidth = (int) (screenWidth * buttonWidthPercentage);
         int buttonHeight = (int) (screenHeight * buttonHeightPercentage);
-        int caseWidth = (int) (screenWidth * 1/3);
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) tableLayout.getLayoutParams();
-        params.bottomMargin = marginBottom;
-        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        params.width = screenWidth;
-        tableLayout.setLayoutParams(params);
-        /*TableLayout.LayoutParams tableLayoutParams = new TableLayout.LayoutParams(screenWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tableLayout.setLayoutParams(tableLayoutParams);*/
 
-        System.out.println("Largueur du tableau :" + tableLayout.getWidth());
 
         for (int i = 0; i < tableLayout.getChildCount(); i++) {
             View child = tableLayout.getChildAt(i);
@@ -105,7 +96,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 TableRow tableRow = (TableRow) child;
                 int buttonCount = tableRow.getChildCount();
 
-                TableRow.LayoutParams rowParams = new TableRow.LayoutParams(caseWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
+                TableRow.LayoutParams rowParams = new TableRow.LayoutParams(screenWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
                 tableRow.setLayoutParams(rowParams);
 
                 for (int j = 0; j < buttonCount; j++) {
@@ -123,5 +114,13 @@ public class CalculatorActivity extends AppCompatActivity {
     public void addCharacter(View view) {
         String s = (String) ((Button)view).getText();
         presenter.addCharacter(s);
+    }
+
+    public void suppr(View view) {
+        presenter.suppr();
+    }
+
+    public void exec(View view) {
+        presenter.exec();
     }
 }
