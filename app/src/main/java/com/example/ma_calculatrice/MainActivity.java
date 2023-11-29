@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(com.example.ma_calculatrice.MainActivity.this, CalculatorActivity.class);
                 startActivity(intent);
             }
-
         });
     }
 }

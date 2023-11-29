@@ -6,18 +6,18 @@ package com.example.ma_calculatrice;public class CalculatorPresenter {
     }
 
     public void addCharacter(String s) {
-        _view.result.setText(_view.result.getText() + s);
+        _view.input.setText(_view.input.getText() + s);
     }
 
     public void suppr() {
-        String text = (String) _view.result.getText();
+        String text = (String) _view.input.getText();
         if (text.length() == 0) {
             return;
         }
-        _view.result.setText(text.substring(0,text.length()-1));
+        _view.input.setText(text.substring(0,text.length()-1));
     }
 
     public void exec() {
-        _view.result.setText(CalculatorModel.exec((String) _view.result.getText()));
+        _view.input.setText(CalculatorModel.exec((String) _view.input.getText()));
     }
 }

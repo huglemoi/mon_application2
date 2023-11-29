@@ -15,8 +15,8 @@ public class CalculatorActivity extends AppCompatActivity {
 
     CalculatorPresenter presenter;
 
-    TextView result;
-
+    TextView input;
+    TableLayout tableLayout;
     Button divisionsButton;
     Button multiplicationButton;
     Button soustractionButton;
@@ -41,7 +41,8 @@ public class CalculatorActivity extends AppCompatActivity {
 
         presenter = new CalculatorPresenter(this);
 
-        result = findViewById(R.id.textView);
+        input = findViewById(R.id.textView);
+        tableLayout = findViewById(R.id.tableLayout);
         divisionsButton = findViewById(R.id.divisionButton);
         multiplicationButton = findViewById(R.id.multiplicationButton);
         soustractionButton = findViewById(R.id.soustractionButton);
@@ -59,19 +60,6 @@ public class CalculatorActivity extends AppCompatActivity {
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
 
-        /*button0.setOnClickListener(even -> {presenter.addNumber(0);});
-        button1.setOnClickListener(even -> {presenter.addNumber(1);});
-        button2.setOnClickListener(even -> {presenter.addNumber(2);});
-        button3.setOnClickListener(even -> {presenter.addNumber(3);});
-        button4.setOnClickListener(even -> {presenter.addNumber(4);});
-        button5.setOnClickListener(even -> {presenter.addNumber(5);});
-        button6.setOnClickListener(even -> {presenter.addNumber(6);});
-        button7.setOnClickListener(even -> {presenter.addNumber(7);});
-        button8.setOnClickListener(even -> {presenter.addNumber(8);});
-        button9.setOnClickListener(even -> {presenter.addNumber(9);});*/
-
-
-        TableLayout tableLayout = findViewById(R.id.tableLayout);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenWidth = displayMetrics.widthPixels;
