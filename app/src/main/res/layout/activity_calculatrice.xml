@@ -18,7 +18,8 @@
                 android:layout_width="0dp"
                 android:layout_marginEnd="19dp"
                 android:layout_span="3"
-                android:textAlignment="textEnd" />
+                android:textAlignment="textEnd"
+                android:textSize="50dp"/>
 
         </TableRow>
 
@@ -150,7 +151,8 @@
                 android:id="@+id/deleteButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
-                android:text="@string/suppr" />
+                android:text="@string/suppr"
+                android:onClick="suppr"/>
 
             <Button
                 android:id="@+id/button0"
@@ -163,9 +165,11 @@
                 android:id="@+id/executionButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
-                android:text="@string/exec" />
+                android:text="@string/exec"
+                android:onClick="exec"
+                android:backgroundTint="#2FF14F"/>
         </TableRow>
 
 
     </TableLayout>
-</LinearLayout>
+</RelativeLayout>
