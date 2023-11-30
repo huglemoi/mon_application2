@@ -11,7 +11,7 @@ import com.example.mon_application.Model.CalculatorModel;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class CalculatorModelTest {
+public class CalculatorPresenterTest {
     @Test
     public void addition_isCorrect() {
         assertThrows(ArithmeticException.class, () -> {

@@ -14,14 +14,10 @@ public class MainView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        Button start = findViewById(R.id.button);
-
-        start.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View _view) {
-                Intent intent = new Intent(MainView.this, CalculatorView.class);
-                startActivity(intent);
-            }
-        });
+    public void launchCalculator(View view) {
+        Intent intent = new Intent(MainView.this, CalculatorView.class);
+        startActivity(intent);
     }
 }

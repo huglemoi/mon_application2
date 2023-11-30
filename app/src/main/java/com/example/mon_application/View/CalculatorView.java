@@ -18,26 +18,10 @@ import com.example.mon_application.Presenter.CalculatorPresenter;
 public class CalculatorView extends AppCompatActivity {
 
     CalculatorPresenter presenter;
+    bool errorState;
 
     TextView input;
     TableLayout tableLayout;
-    Button divisionsButton;
-    Button multiplicationButton;
-    Button soustractionButton;
-    Button additionButton;
-    Button executionButton;
-    Button deleteButton;
-    Button button0;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button button7;
-    Button button8;
-    Button button9;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,24 +29,11 @@ public class CalculatorView extends AppCompatActivity {
 
         presenter = new CalculatorPresenter(this);
 
-        input = findViewById(R.id.textView);
+        input = findViewById(R.id.input);
+        output = findViewById(R.id.output);
         tableLayout = findViewById(R.id.tableLayout);
-        divisionsButton = findViewById(R.id.divisionButton);
-        multiplicationButton = findViewById(R.id.multiplicationButton);
-        soustractionButton = findViewById(R.id.soustractionButton);
-        additionButton = findViewById(R.id.additionButton);
-        executionButton = findViewById(R.id.executionButton);
-        deleteButton = findViewById(R.id.deleteButton);
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        button7 = findViewById(R.id.button7);
-        button8 = findViewById(R.id.button8);
-        button9 = findViewById(R.id.button9);
+
+        error = false;
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -79,6 +50,7 @@ public class CalculatorView extends AppCompatActivity {
         double buttonHeightPercentage = 0.07;
         int buttonWidth = (int) (screenWidth * buttonWidthPercentage);
         int buttonHeight = (int) (screenHeight * buttonHeightPercentage);
+        int textSize = (int) (buttonHeight * 0.75);
 
 
         for (int i = 0; i < tableLayout.getChildCount(); i++) {
@@ -96,6 +68,7 @@ public class CalculatorView extends AppCompatActivity {
 
                     if (view instanceof Button) {
                         TableRow.LayoutParams buttonParams = new TableRow.LayoutParams(buttonWidth, buttonHeight);
+                        buttonParams.textSize = textSize;
                         view.setLayoutParams(buttonParams);
                     }
                 }
@@ -103,11 +76,20 @@ public class CalculatorView extends AppCompatActivity {
         }
     }
 
+    public void setErrorState() {
+        errorState = true;
+    }
+
     public void addCharacter(View button) {
+        if (errorState) {
+            input.setText("");
+            errorState = false;
+        }
         char c = (char) button.getText();
         String oldExpression = (String) input.getText();
         String newExpression = presenter.addCharacter(oldExpression, c);
         input.setText(newExpression);
+        output.setText(presenter.exec(newExpression));
     }
 
     public void suppr(View view) {
@@ -116,6 +98,11 @@ public class CalculatorView extends AppCompatActivity {
     }
 
     public void exec(View view) {
-        input.setText(CalculatorModel.exec((String) input.getText()));
+        String result = output.getText();
+        input.setText(result);
+        if (result.equals("Invalid operation")) {
+            setErrorState();
+        }
+        output.setText("");
     }
 }

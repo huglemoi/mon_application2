@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="NumberColor">#00FFFF</color>
+    <color name="OperatorColor">#0000FF</color>
+    <color name="SpecialButtonColor">#800080</color>
+</resources>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -11,15 +18,32 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
+
         <TableRow>
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/input"
                 android:layout_width="0dp"
                 android:layout_marginEnd="19dp"
                 android:layout_span="3"
                 android:textAlignment="textEnd"
-                android:textSize="50dp"/>
+                android:textSize="50dp"
+                android:autoSizeTextType="uniform"  
+                android:autoSizeMinTextSize="12dp"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/output"
+                android:layout_width="0dp"
+                android:layout_marginEnd="19dp"
+                android:layout_span="3"
+                android:textAlignment="textEnd"
+                android:textSize="50dp"
+                android:autoSizeTextType="uniform"  
+                android:autoSizeMinTextSize="12dp"/>
 
         </TableRow>
 
@@ -40,7 +64,8 @@
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="/" />
+                android:text="/"
+                android:backgroundTint="@color/OperatorColor"/>
 
         </TableRow>
 
@@ -51,21 +76,24 @@
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="-" />
+                android:text="-"
+                android:backgroundTint="@color/OperatorColor"/>
 
             <Button
                 android:id="@+id/multiplicationButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="*" />
+                android:text="*"
+                android:backgroundTint="@color/OperatorColor"/>
 
             <Button
                 android:id="@+id/additionButton"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="+" />
+                android:text="+"
+                android:backgroundTint="@color/OperatorColor"/>
 
         </TableRow>
 
@@ -76,21 +104,24 @@
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_7" />
+                android:text="@string/_7"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/button8"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_8" />
+                android:text="@string/_8"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/button9"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_9" />
+                android:text="@string/_9"
+                android:backgroundTint="@color/NumberColor"/>
 
         </TableRow>
 
@@ -101,21 +132,24 @@
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_4" />
+                android:text="@string/_4"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/button5"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_5" />
+                android:text="@string/_5"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/button6"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_6" />
+                android:text="@string/_6"
+                android:backgroundTint="@color/NumberColor"/>
 
         </TableRow>
 
@@ -126,21 +160,24 @@
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_1" />
+                android:text="@string/_1"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/button2"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_2" />
+                android:text="@string/_2"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/button3"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_3" />
+                android:text="@string/_3"
+                android:backgroundTint="@color/NumberColor"/>
 
         </TableRow>
 
@@ -152,14 +189,16 @@
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:text="@string/suppr"
-                android:onClick="suppr"/>
+                android:onClick="suppr"
+                android:backgroundTint="@color/SpecialButtonColor"/>
 
             <Button
                 android:id="@+id/button0"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:onClick="addCharacter"
-                android:text="@string/_0" />
+                android:text="@string/_0"
+                android:backgroundTint="@color/NumberColor"/>
 
             <Button
                 android:id="@+id/executionButton"
@@ -167,7 +206,7 @@
                 android:layout_weight="1"
                 android:text="@string/exec"
                 android:onClick="exec"
-                android:backgroundTint="#2FF14F"/>
+                android:backgroundTint="@color/SpecialButtonColor"/>
         </TableRow>
 
 
