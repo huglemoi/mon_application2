@@ -1,8 +1,10 @@
-package com.example.ma_calculatrice;
+package com.example.mon_application;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
+import com.example.mon_application.Model.CalculatorModel;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

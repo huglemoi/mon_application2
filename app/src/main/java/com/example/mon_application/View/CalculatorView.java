@@ -1,4 +1,4 @@
-package com.example.ma_calculatrice;
+package com.example.mon_application.View;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CalculatorActivity extends AppCompatActivity {
+import com.example.ma_calculatrice.R;
+import com.example.mon_application.Model.CalculatorModel;
+import com.example.mon_application.Presenter.CalculatorPresenter;
+
+public class CalculatorView extends AppCompatActivity {
 
     CalculatorPresenter presenter;
 
@@ -99,16 +103,19 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
-    public void addCharacter(View view) {
-        String s = (String) ((Button)view).getText();
-        presenter.addCharacter(s);
+    public void addCharacter(View button) {
+        char c = (char) button.getText();
+        String oldExpression = (String) input.getText();
+        String newExpression = presenter.addCharacter(oldExpression, c);
+        input.setText(newExpression);
     }
 
     public void suppr(View view) {
-        presenter.suppr();
+        String text = input.getText()
+        input.setText(presenter.suppr(text));
     }
 
     public void exec(View view) {
-        presenter.exec();
+        input.setText(CalculatorModel.exec((String) input.getText()));
     }
 }
